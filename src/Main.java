@@ -10,6 +10,7 @@ public class Main {
         task6();
         task7();
         task8();
+
     }
 
     public static void task1() {
@@ -91,21 +92,40 @@ public class Main {
 
     public static void task6() {
         System.out.println("Задача 6");
-        int contribution = 12_000_000;
         double sum = 15000;
         int months = 12 * 9;
         double percentagePerMonth = 0.07;
         NumberFormat numberFormat = NumberFormat.getCurrencyInstance();
-
         for (int month = 1; month <= months; month++) {
-            month += 1;
             sum = sum * (1 + percentagePerMonth);
+
             if (month % 6 == 0) {
 
-                System.out.println("Год " + month + " численность населения составляет " + numberFormat.format(sum));
+                System.out.println("Месяц " + month + " численность населения составляет " + numberFormat.format(sum));
             }
         }
 
     }
+    public static void task7() {
+        System.out.println("Задача 7");
+        int firstFridayInMonth = 3;
+        for(int friday = firstFridayInMonth; friday <= 31; friday += 7 ){
+            System.out.println("Сегодня пятница " + friday + "-е число. Необходимо подготовить отчет».");
+        }
+    }
+    public static void task8() {
+        System.out.println("Задача 8");
+        int firstFlightYear = 0;
+        int period = 79;
+        int currentYear=2023;
+        int start = currentYear - 200;
+        int end = currentYear + 100;
+        for(int year = start; year <= end; year++){
+            if(year % period == firstFlightYear){
+                System.out.println(year);
+            }
+        }
+    }
+
 
 }
